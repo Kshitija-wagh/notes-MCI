@@ -9,3 +9,5 @@ Making the build process easy
 Providing a uniform build system
 Providing quality project information
 Encouraging better development practices
+
+A WAR file (Web Application Archive) is a compressed package used to distribute a collection of Java-based web components and applications. It is similar to a JAR (Java Archive) file but is specifically designed for web applications. Here are some key points about WAR files:
