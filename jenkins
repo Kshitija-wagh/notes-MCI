@@ -1,0 +1,32 @@
+The Jenkins master-slave architecture is designed to manage distributed builds, allowing Jenkins to handle larger and more complex projects efficiently. Here’s a breakdown of how it works:
+
+Jenkins Master
+Role: The master node is the central control unit of Jenkins. It handles:
+Scheduling build jobs.
+Dispatching builds to the slave nodes for execution.
+Monitoring the status of slave nodes (online/offline).
+Recording and presenting the build results.
+Execution: The master can also execute build jobs directly, but it’s generally recommended to delegate this to slave nodes to distribute the load12.
+Jenkins Slave
+Role: Slave nodes are remote machines that run the build jobs dispatched by the master. They:
+Execute build jobs as instructed by the master.
+Can run on various operating systems (Linux, Windows, macOS).
+Communicate with the master over the TCP/IP protocol.
+Configuration: You can configure projects to run on specific slave nodes or let Jenkins allocate jobs to the next available slave12.
+Setting Up Master-Slave Architecture
+Add a New Node:
+Go to Manage Jenkins > Manage Nodes > New Node.
+Enter the node name, select Permanent Agent, and click OK.
+Fill in the node details, such as the number of executors, remote root directory, and labels.
+Configure the Slave Node:
+Choose the launch method (e.g., via SSH for Linux nodes).
+Provide the necessary credentials and connection details.
+Save the configuration and ensure the node comes online13.
+Benefits of Master-Slave Architecture
+Scalability: Distributes the load across multiple machines, allowing Jenkins to handle more jobs simultaneously.
+Flexibility: Enables testing and building in different environments (e.g., different OS versions).
+Efficiency: Frees up the master node to manage job scheduling and monitoring, improving overall performance12.
+Example Use Case
+Imagine you have a project that needs to be tested on multiple operating systems. You can set up slave nodes running different OS versions (e.g., Ubuntu, Windows, macOS). The Jenkins master will schedule and dispatch the build jobs to the appropriate slave nodes, ensuring that the tests are run in the correct environments2.
+
+If you have any specific questions about configuring Jenkins master-slave architecture or need further details, feel free to ask!
